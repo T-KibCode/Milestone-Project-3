@@ -1,0 +1,6 @@
+{
+    "type": "non_profit_user_account",
+    "API_key_v3": "9ee4a43299a1ad44c8b7db387a6ee72b",
+    "Example_API_Request": "https://api.themoviedb.org/3/movie/550?api_key=9ee4a43299a1ad44c8b7db387a6ee72b",
+    "API_READ_Access_token_V4Auth": "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI5ZWU0YTQzMjk5YTFhZDQ0YzhiN2RiMzg3YTZlZTcyYiIsInN1YiI6IjY0MzMyNjFhOWE2NDM1MDZmMWIwZTA5OCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.Go8xqKboadoW7FOl4r_DHz8903iLHzgSvwww3Vdc2r0"
+}

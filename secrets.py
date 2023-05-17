@@ -1,0 +1,1 @@
+#app.config['SECRET_KEY'] = 'SecretTokenLogin'SELECT * FROM actor;SELECT * FROM actor;SELECT * FROM actor;SELECT * FROM actor;
