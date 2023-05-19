@@ -1,9 +1,10 @@
 import os
 import secrets
 import jwt
+import FlickFanatic
 from PIL import Image
 from flask import abort, render_template, url_for, flash, redirect, request
-from FlickFanatic import app, db, bcrypt
+from FlickFanatic import app, db, bcrypt 
 from FlickFanatic.forms import RegistrationForm, LoginForm, UpdateAccountForm, PostForm
 from FlickFanatic.models import User, Post
 from flask_login import login_user, current_user, logout_user, login_required
@@ -14,7 +15,7 @@ from flask_login import login_user, current_user, logout_user, login_required
 def home():
     page = request.args.get('page', 1, type=int)
     posts = Post.query.paginate(page=page, per_page=5)
-    return render_template('home.html', posts=posts)
+    return render_template('index.html', posts=posts)
 
 @app.route("/about")
 def about():
@@ -26,7 +27,7 @@ def search():
 
 @app.route("/register", methods=['GET','POST'])
 def register():
-    if current_user.is_authenticated: # type: ignore
+    if current_user.is_authenticated: 
         return redirect(url_for('home'))
     form = RegistrationForm()
     if form.validate_on_submit():
@@ -40,7 +41,7 @@ def register():
 
 @app.route("/login", methods=['GET','POST'])
 def login():
-    if current_user.is_authenticated: # type: ignore
+    if current_user.is_authenticated: 
         return redirect(url_for('home'))
     form = LoginForm()
     if form.validate_on_submit():

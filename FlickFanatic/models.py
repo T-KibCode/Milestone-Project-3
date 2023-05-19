@@ -1,6 +1,8 @@
 import os
+import FlickFanatic
 from datetime import datetime
 from FlickFanatic import db, login_manager
+from FlickFanatic.models import User, Post
 from flask_login import UserMixin
 
 
