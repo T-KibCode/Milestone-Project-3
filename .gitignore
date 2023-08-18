@@ -11,3 +11,4 @@ creds.json
 moviecreds.json
 settings.json
 secrets
+.env
