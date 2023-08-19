@@ -12,3 +12,4 @@ moviecreds.json
 settings.json
 secrets
 .env
+.bash_profile

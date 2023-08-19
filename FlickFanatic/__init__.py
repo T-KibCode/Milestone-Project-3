@@ -1,7 +1,6 @@
 import os
-import FlickFanatic
 import psycopg2
-from flask import Flask, render_template, url_for, flash, redirect, User, Post
+from flask import Flask, render_template, url_for, flash, redirect
 from flask_sqlalchemy import SQLAlchemy
 from flask_bcrypt import Bcrypt
 from flask_login import LoginManager, login_manager, set_login_view

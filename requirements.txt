@@ -96,7 +96,6 @@ pyparsing==3.0.9
 pytest==7.3.1
 pytest-cache==1.0
 pytest-pep8==1.0.6
-python-dateutil==1.5
 python-decouple==3.8
 python3-openid==3.2.0
 pytz==2023.3
