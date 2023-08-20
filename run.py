@@ -1,9 +1,6 @@
-import os
-import FlickFanatic
-from FlickFanatic import app
+from FlickFanatic import create_app
 
-if __name__ == "__main__":
+app = create_app()
+
+if __name__ == '__main__':
     app.run(debug=True)
-
-
-

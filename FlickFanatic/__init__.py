@@ -1,20 +1,35 @@
-import os
-import psycopg2
-from flask import Flask, render_template, url_for, flash, redirect
+from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_bcrypt import Bcrypt
-from flask_login import LoginManager, login_manager, set_login_view
+from flask_login import LoginManager
+from flask_mail import Mail
+from FlickFanatic.config import Config
 
 
-app = Flask(__name__)
-app.config['SECRET_KEY'] = os.environ.get('secretKey')
-app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('sqlDatabaseUri') 
-db = SQLAlchemy(app)
-bcrypt = Bcrypt(app)
-login_manager = LoginManager(app)
-login_manager.login_view ='login'
+db = SQLAlchemy()
+bcrypt = Bcrypt()
+login_manager = LoginManager()
+login_manager.login_view = 'users.login'
 login_manager.login_message_category = 'info'
+mail = Mail()
 
 
-from FlickFanatic import routes 
+def create_app(config_class=Config):
+    app = Flask(__name__)
+    app.config.from_object(Config)
 
+    db.init_app(app)
+    bcrypt.init_app(app)
+    login_manager.init_app(app)
+    mail.init_app(app)
+
+    from FlickFanatic.users.routes import users
+    from FlickFanatic.posts.routes import posts
+    from FlickFanatic.main.routes import main
+    from FlickFanatic.errors.handlers import errors
+    app.register_blueprint(users)
+    app.register_blueprint(posts)
+    app.register_blueprint(main)
+    app.register_blueprint(errors)
+
+    return app
